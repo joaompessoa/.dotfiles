@@ -5,7 +5,7 @@ set -e
 # Colors for output
 GREEN="\033[0;32m"
 NC="\033[0m"
-
+export ZSHRC="$HOME/.zshrc"
 echo -e "${GREEN}Starting Zsh setup...${NC}"
 
 # Check if Zsh is installed
