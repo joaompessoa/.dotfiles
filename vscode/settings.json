@@ -1,4 +1,6 @@
-{
+{   
+    // Window
+    "window.menuBarVisibility": "compact",
     // Workbench
     "files.autoSave": "afterDelay",
     "workbench.editorLargeFileConfirmation": 100,
@@ -6,21 +8,33 @@
         "*.copilotmd": "vscode.markdown.preview.editor",
         "file:/**/*.parquet": "jupyter-data-wrangler"
     },
+
     // Icons
     "workbench.iconTheme": "material-icon-theme",
+
     // Theme
     "workbench.colorTheme": "GitHub Dark Default",
+    "editor.tokenColorCustomizations": {
+        "[GitHub Dark Default]": {
+            "types": "#e249b4",
+            "textMateRules": [
+            {
+                "scope": "variable.parameter.function.language.special.self.python",
+                "settings": {  
+                    "fontStyle": "italic bold"
+                }
+            }
+            ]
+        }
+    },
+
     // Editor
     "editor.fontFamily": "JetBrains Mono, monospace",
     "editor.minimap.enabled": false,
     "editor.fontLigatures": true,
     "editor.wordWrap": "on",
-    "editor.renderWhitespace": "all",
-    "editor.renderLineHighlight": "all",
     "editor.bracketPairColorization.enabled": true,
     "editor.inlayHints.enabled": "on",
-    "editor.inlayHints.fontFamily": "Fira Code",
-    "editor.inlayHints.padding": true,
     "editor.cursorSmoothCaretAnimation": "on",
     "editor.cursorBlinking": "smooth",
     "editor.smoothScrolling": true,
@@ -33,20 +47,32 @@
     "editor.formatOnType": true,
     "editor.semanticHighlighting.enabled": true,
     "editor.codeActionsOnSave": {
-        "source.fixAll.eslint": "always",
-        "source.organizeImports": "always"
+        "source.fixAll.eslint": "explicit",
+        "source.organizeImports": "explicit",
+        "source.fixAll.pylance": "explicit"
     },
+
     // Explorer
     "explorer.confirmDragAndDrop": false,
     "explorer.confirmDelete": false,
     "explorer.compactFolders": false,
     "explorer.sortOrder": "type",
+
+
+
     // Code Navigation
     "breadcrumbs.enabled": true,
+
     // Python
     "python.analysis.inlayHints.variableTypes": true,
     "python.analysis.inlayHints.functionReturnTypes": true,
     "python.analysis.typeCheckingMode": "off",
+    "[python]": {
+        "editor.defaultFormatter": "ms-python.black-formatter",
+        
+        
+    },
+
     // Terminal
     "terminal.integrated.allowedLinkSchemes": [
         "file",
@@ -61,6 +87,8 @@
     "terminal.integrated.fontLigatures.enabled": true,
     "terminal.integrated.defaultProfile.linux": "zsh",
     "terminal.integrated.defaultProfile.osx": "zsh",
+
+
     // Remote
     "remote.SSH.remotePlatform": {
         "joaompessoa": "linux",
@@ -74,16 +102,21 @@
     },
     "remote.autoForwardPortsSource": "hybrid",
     "redhat.telemetry.enabled": false,
+    
     // Jupyter Notebooks
     "notebook.output.textLineLimit": 20,
     "notebook.output.scrolling": false,
     "notebook.output.wordWrap": true,
+
     // Git
     "git.openRepositoryInParentFolders": "never",
+   
+
     // Data Wrangler
     "dataWrangler.experiments.datatypes.pyspark": true,
     "dataWrangler.experiments.fastCsvParsing": true,
     "dataWrangler.startInEditModeForNotebookEntrypoints": true,
+    
     // Kubernetes
     "vs-kubernetes": {
         "vscode-kubernetes.kubectl-path-linux": "/home/joaompessoa/.local/state/vs-kubernetes/tools/kubectl/kubectl",
@@ -92,9 +125,11 @@
         "vscode-kubernetes.helm-path-mac": "/Users/joaoseverino/.vs-kubernetes/tools/helm/darwin-arm64/helm",
         "vscode-kubernetes.minikube-path-mac": "/Users/joaoseverino/.vs-kubernetes/tools/minikube/darwin-arm64/minikube"
     },
+    
     // Copilot
     "github.copilot.chat.codesearch.enabled": true,
     "github.copilot.nextEditSuggestions.enabled": false,
+
     // // TODO Tree
     // "todo-tree.regex.regex": "(//|#|<!--|;|/\\*)\\s*(TODO|FIXME|BUG|HACK|NOTE)[: ]",
     // "todo-tree.general.tags": [
@@ -105,6 +140,7 @@
     //     "NOTE"
     // ],
     // "todo-tree.tree.showScanModeButton": false,
+
     // Files
     "files.watcherExclude": {
         "**/node_modules/**": true,
@@ -112,4 +148,6 @@
         "**/venv/**": true,
         "**/__pycache__/**": true
     },
+    
+    
 }
